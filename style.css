@@ -1,0 +1,25 @@
+body {
+    background-color: blanchedalmond;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: burlywood;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.read {
+    border: 3px solid green;
+}
+
+.notRead {
+    border: 3px solid red;
+}
+
+::backdrop {
+    background-color: gray;
+    opacity: 0.75;
+}
