@@ -6,32 +6,43 @@
     <title>The Book Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>The Library of Books</h1>
-  
-    <dialog>
-        <form action="#" method="post">
-            <label for="title">Title:</label>
-            <input id="title" type="text" name="title" required>
+    <header>
+        <h1>The Library of Books</h1>
+    
+        <dialog>
+            <h2>Add a Book to Your Library</h2>
+            <form action="#" method="post">
+                <div class="entry">
+                    <label for="title">Title:</label>
+                    <input id="title" type="text" name="title" required>
+                </div>
+                <div class='entry'>
+                    <label for="author">Author:</label>
+                    <input id="author" type="text" name="author" required>
+                </div>
+                <div class="entry">
+                    <label for="pages">Number of Pages:</label>
+                    <input id="pages" type="number" name="pages" required>
+                </div>
+                <div class="entry">
+                    <label for="read">Have you read the book?</label>
+                    <input id="read" type="checkbox" name="read">
+                </div>
+                <div class="entryBtn">
+                    <button class="submit">Add my Book!</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+                <p class="errorMsg"></p>
+            </form>  
+        </dialog>
 
-            <label for="author">Author:</label>
-            <input id="author" type="text" name="author" required>
-
-            <label for="pages">Number of Pages:</label>
-            <input id="pages" type="number" name="pages" required>
-
-            <label for="read">Have you read the book?</label>
-            <input id="read" type="checkbox" name="read">
-
-            <button class="submit">Add my Book!</button>
-            <button class="cancel">Cancel</button>
-
-            <p class="errorMsg"></p>
-        </form>
-        
-    </dialog>
-    <button class="addBook">Add a Book to Your Library</button>
+        <button class="addBook">Add a Book to Your Library</button>
+    </header>
 
     <main class="library">
 

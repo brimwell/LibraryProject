@@ -1,25 +1,161 @@
+* {
+    box-sizing: border-box;
+
+}
+
+h2, p {
+    margin: 0;
+}
+
 body {
     background-color: blanchedalmond;
+    font-family:'Merriweather', serif;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: blanchedalmond;
+    padding: 0px 0px 30px 0px;
+    z-index: 1;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 5px 5px lightgray;
+}
+
+.addBook {
+    background-color: beige;
+    padding: 20px 40px;
+    border: 3px solid black;
+    border-radius: 15px;
+    font-size: 1rem;
+}
+
+.addBook:hover {
+    background-color: black;
+    color: beige;
+}
+
+main {
+    position: relative;
+    top: 200px;
+    padding: 0px 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
 }
 
 .card {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 250px;
     background-color: burlywood;
     border-radius: 10px;
     text-align: center;
     padding: 20px;
+    box-shadow:  5px 5px 10px lightgray;
+    position: relative;
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.card .author {
+    margin-bottom: 0.5rem;
 }
 
 .read {
-    border: 3px solid green;
+    border-top: 20px solid green;
 }
 
 .notRead {
-    border: 3px solid red;
+    border-top: 20px solid red;
 }
+
+.card button {
+    padding: 0.25rem 0.5rem;
+    font-style: italic;
+    border-radius: 8px;
+    background-color: beige;
+}
+
+.card button:hover {
+    color: white;
+    background-color: black;
+}
+
+.btnWrapper {
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Styling for Form Dialog  */
 
 ::backdrop {
     background-color: gray;
     opacity: 0.75;
+}
+
+dialog {
+    width: 50%;
+}
+
+dialog h2 {
+    margin-bottom: 10px;
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    margin: 0.5rem 1rem;
+    overflow: hidden;
+}
+
+.entryBtn {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 30px;
+    margin: 0.5rem 1rem;
+}
+
+.entryBtn button {
+    background-color: beige;
+    border-radius: 8px;
+    padding: 0.25rem 0px;
+}
+
+.entryBtn button:hover {
+    background-color: black;
+    color: white;
+}
+
+form p {
+    color: red;
+    font-size: 0.75rem;
+    margin: 15px 1rem;
+}
+
+input {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

@@ -68,13 +68,16 @@ function displayLibrary () {
             div.classList.add('notRead');
         };
 
+        const btnDiv = document.createElement('aside');
+        btnDiv.classList.add('btnWrapper');
+
         const btn1 = document.createElement('button');
         btn1.classList.add('remove');
         btn1.textContent = 'Remove';
 
         const btn2 = document.createElement('button');
         btn2.classList.add('toggleRead');
-        btn2.textContent = 'Change Read Status';
+        btn2.textContent = 'Read?';
     
 
         main.appendChild(div);
@@ -82,21 +85,22 @@ function displayLibrary () {
         div.appendChild(p);
         div.appendChild(p2);
         div.appendChild(p3);
-        div.appendChild(btn1);
-        div.appendChild(btn2);
+        div.appendChild(btnDiv);
+        btnDiv.appendChild(btn1);
+        btnDiv.appendChild(btn2);
     };
     let removeBtn = document.querySelectorAll('.remove');
     removeBtn.forEach((button) => {
         button.addEventListener('click', (event) => {
-            let arrayNum = event.srcElement.parentElement.id;
+            let arrayNum = event.srcElement.parentElement.parentElement.id;
             myLibrary.splice(arrayNum, 1);
-            displayLibrary();
+            displayLibrary(); 
         });
     });
     let readBtn = document.querySelectorAll('.toggleRead');
     readBtn.forEach((button) => {
         button.addEventListener('click', (e) => {
-            let selectedBk = e.srcElement.parentElement;
+            let selectedBk = e.srcElement.parentElement.parentElement;
             if (selectedBk.className === 'card read') {
                 selectedBk.className = 'card notRead';
             } else {
@@ -135,7 +139,7 @@ submitButton.addEventListener('click', (event) => {
         dialog.close();
     } else {
         let errorMsg = form.querySelector('p');
-        errorMsg.textContent = 'You need to fill out completely to add a book to your library.';
+        errorMsg.textContent = 'You need to fill out Title, Authoir, & Number of Pages to add a book to your library.';
     };
 });
 
